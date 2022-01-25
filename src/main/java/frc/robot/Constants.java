@@ -28,4 +28,5 @@ public final class Constants {
 	// Xbox controller port
 	public static final int kXboxPort = 0;
 
+	public static final double percentDeadband = 0.05;
 }

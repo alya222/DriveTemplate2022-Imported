@@ -32,6 +32,19 @@ public class RevDrivetrain extends SubsystemBase {
     RRearWheel.follow(RFrontWheel);
   }
 
+  public double deadband(double JoystickValue, double DeadbandCutOff) {
+    double deadbandreturn;
+
+    if (Math.abs(JoystickValue) < DeadbandCutOff) {
+      deadbandreturn = 0;
+    }
+    else {
+      deadbandreturn = JoystickValue;
+    }
+    
+    return deadbandreturn;
+  }
+
   public DifferentialDrive getDifferentialDrive() {
     return roboDrive;
   }

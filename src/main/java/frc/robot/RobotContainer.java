@@ -34,9 +34,11 @@ public class RobotContainer {
   // Drive with Controller 
   private Command manualDrive = new RunCommand(
     () -> rDrive.getDifferentialDrive().
-    tankDrive((xbox.getRawAxis(kLeftY.value)), 
-    (xbox.getRawAxis(kLeftX.value))), 
-    (rDrive)
+    tankDrive(rDrive.deadband(xbox.getRawAxis(kLeftY.value), percentDeadband), 
+    rDrive.deadband(xbox.getRawAxis(kRightY.value), percentDeadband),
+    false
+    ),
+    rDrive
     );
 
   public RobotContainer() {
