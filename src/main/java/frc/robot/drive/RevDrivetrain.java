@@ -29,7 +29,9 @@ public class RevDrivetrain extends SubsystemBase {
   public RevDrivetrain() {
     
     LRearWheel.follow(LFrontWheel);
-    RRearWheel.follow(RFrontWheel);
+    RRearWheel.follow(RFrontWheel); 
+    
+    RFrontWheel.setInverted(true);
   }
 
   public double deadband(double JoystickValue, double DeadbandCutOff) {
